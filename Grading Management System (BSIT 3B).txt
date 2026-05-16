@@ -1,0 +1,31 @@
+Grading Management System (BSIT 3B)
+
+Macuya, Jarey Fel A.
+
+Note: When logging in admin, use the already registered account:
+
+	USERNAME: sysadmin
+	PASSWORD: sysadmin
+
+1) You can register a teacher's account and go to the admin to approve or reject the teacher. 
+
+2) Assign the year and section of the teacher.
+
+3) For an example login to teacher's account, try:
+
+	USERNAME: jarreey@gmail.com
+	USERNAME: jareyjarey
+
+4) Go to the teacher's account and check the assigned year and section that assuming you will handle as the adviser.
+
+5) Add a student.
+
+6) Input midterms and finals each semester and automatically acquire the status/remarks of a student's grade.
+
+7) Edit grades' data or delete the student itself.
+
+8) You can also check the student's student number and automated password assuming the student wants to check his/her grades (assuming she acquires the credentials from the registrar's staff.
+
+9) Student logs in and checks grades status.
+
+	
