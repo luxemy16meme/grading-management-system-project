@@ -23,8 +23,12 @@ export default function RightSidebar() {
 
   const handleLogout = async () => {
     try {
+      const confirmLogout = window.confirm("Are you sure you wanted to logout?");
+      if(confirmLogout){
+        localStorage.removeItem("admin");
       await axios.post("http://localhost:5000/logout", {}, { withCredentials: true });
       window.location.href = "/login";
+      }
     } catch (err) {
       console.error("Logout failed", err);
       alert("Failed to logout");

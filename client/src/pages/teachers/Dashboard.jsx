@@ -83,7 +83,17 @@ useEffect(() => {
 
   const updateGrade = (index, field, value) => {
     const updated = [...students];
-    updated[index][field] = Number(value);
+
+    let grade = Number(value);
+    if (grade < 0){
+      grade = 0;
+      alert("Grade should not be less than 0 or negative.");
+    }
+    if (grade > 100){
+      grade = 100;
+      alert("Grade should not be greater than 100.");
+    }
+    updated[index][field] = grade;
 
     const { midterm, final } = updated[index];
 

@@ -3,6 +3,14 @@ import { FaHome } from "react-icons/fa";
 export default function Sidebar({ teacher, showProfileSidebar }) {
   const hoverStyle = (e, enter) => e.currentTarget.style.background = enter ? "rgba(255,255,255,0.25)" : "transparent";
 
+  const handleLogout = () =>{
+    const confirmLogout = window.confirm("Are you sure you wanted to logout?");
+
+    if(confirmLogout){
+      localStorage.removeItem("teacher");
+      window.location.href="/teachers/login";
+    }
+  }
   return (
     <>
       <div style={{
@@ -16,7 +24,7 @@ export default function Sidebar({ teacher, showProfileSidebar }) {
           <p><strong>Email:</strong> {teacher.email}</p>
           <p><strong>Department:</strong> {teacher.department}</p>
         </>}
-        <button className="btn btn-danger w-100 mt-3" onClick={() => { localStorage.removeItem("teacher"); window.location.href="/teacher-login"; }}>Logout</button>
+        <button className="btn btn-danger w-100 mt-3" onClick={handleLogout}>Logout</button>
       </div>
 
       <div style={{ width: "80px", height: "100vh", position: "fixed", top: 0, left: 0, background: "#40653fff", paddingTop: "30px", display: "flex", flexDirection: "column", alignItems: "center", gap: "35px", zIndex: 2000 }}>

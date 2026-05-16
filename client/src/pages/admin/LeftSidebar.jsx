@@ -12,6 +12,14 @@ export default function LeftSidebar({
       : "transparent";
   };
 
+  const handleLogout = () => {
+    const confirmLogout = window.confirm("Are you sure you wanted to logout?");
+    if(confirmLogout){
+      localStorage.removeItem("admin");
+      window.location.href = "/admin/login"; 
+    }
+  }
+
   return (
     <div
       style={{
@@ -70,10 +78,7 @@ export default function LeftSidebar({
         style={{ padding: "12px", borderRadius: "15px", cursor: "pointer" }}
         onMouseEnter={(e) => hoverStyle(e, true)}
         onMouseLeave={(e) => hoverStyle(e, false)}
-        onClick={() => {
-          localStorage.removeItem("admin");
-          window.location.href = "/login"; 
-        }}
+        onClick={handleLogout}
       >
         <FaPowerOff size={26} color="white" />
       </div>
